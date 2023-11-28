@@ -1,4 +1,4 @@
-# XML (eXtensible Markup Language ou Linguagem de Marcação Extensível)
+# XML (eXtensible Markup Language)
 
 - [Introdução](estudos/introducao.md)
 
