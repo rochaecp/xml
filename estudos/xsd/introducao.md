@@ -3,7 +3,7 @@
 ## O que é um esquema XML?
 
 - Um esquema XML descreve a estrutura de um documento XML.
-- A linguagem XML Schema também é conhecida como **XML Schema Definition (XSD)**.
+- A linguagem **XML Schema** também é conhecida como **XML Schema Definition (XSD)**.
 
 ## Exemplo
 
@@ -57,7 +57,7 @@
 - Ao enviar dados de um remetente para um receptor, é essencial que ambas as partes tenha as mesmas "expectativas" sobre o conteúdo.
 - Com XML Schemas, o remetente pode descrever os dados de uma forma que o receptor vai entender.
 - Uma data como: "03-11-2004" será, em alguns países, interpretada como 3.Novembro e em outros países como 11.Março.
-- No entanto, um elemento XML com um tipo de dados assim: ```<tipo de data = "data"> 2004-03-11 </data>``` garante uma compreensão mútua do conteúdo, porque o tipo de dados XML "date" requer o formato "AAAA-MM-DD".
+- No entanto, um elemento XML com um tipo de dados assim: ```<date type="date">2004-03-11</date>``` garante uma compreensão mútua do conteúdo, porque o tipo de dados XML "date" requer o formato "AAAA-MM-DD".
 
 ## Bem formado não é suficiente
 

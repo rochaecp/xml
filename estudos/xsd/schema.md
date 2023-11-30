@@ -46,13 +46,14 @@ Este documento XML tem uma referência a um esquema XML:
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="https://www.w3schools.com note.xsd">
 
-<to>Tove</to>
-<from>Jani</from>
-<heading>Reminder</heading>
-<body>Don't forget me this weekend!</body>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+
 </note>
 ~~~
 
 O seguinte fragmento: ```xmlns="https://www.w3schools.com"``` especifica a declaração de namespace padrão. Esta declaração diz ao validador de esquema em que todos os elementos usados neste documento XML são declarados o namespace "https://www.w3schools.com".
 
-Depois de ter o namespace XML Schema Instance disponível: ```xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"``` você pode usar o atributo schemaLocation. Este atributo tem dois valores, separados por um espaço. O primeiro valor é o namespace a ser usado. O segundo valor é a localização do esquema XML a ser usado para esse namespace: ```xsi:schemaLocation="https://www.w3schools.com note.xsd"```
+Depois de ter o namespace XML Schema Instance disponível: ```xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"``` você pode usar o atributo schemaLocation. Este **atributo tem dois valores**, separados por um espaço. O primeiro valor é o namespace a ser usado. O segundo valor é a localização do esquema XML a ser usado para esse namespace: ```xsi:schemaLocation="https://www.w3schools.com note.xsd"```

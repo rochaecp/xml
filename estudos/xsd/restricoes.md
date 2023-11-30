@@ -1,6 +1,6 @@
 # Restrições XSD
 
-- Restrições são usadas para definir valores aceitáveis para elementos ou atributos XML. Restrições em elementos XML são chamadas de facetas.
+Restrições são usadas para definir valores aceitáveis para elementos ou atributos XML. Restrições em elementos XML são chamadas de facetas.
 
 ## Restrições aos Valores
 
@@ -19,7 +19,7 @@ O exemplo a seguir define um elemento chamado "idade" com uma restrição. O val
 
 ## Restrições a um Conjunto de Valores
 
-- Para limitar o conteúdo de um elemento XML a um conjunto de valores aceitáveis, usaríamos a restrição de enumeração.
+Para limitar o conteúdo de um elemento XML a um conjunto de valores aceitáveis, usamos a restrição de enumeração.
 
 O exemplo abaixo define um elemento chamado "carro" com uma restrição. Os únicos valores aceitáveis são: Audi, Golf, BMW:
 
@@ -49,12 +49,13 @@ O exemplo acima também poderia ter sido escrito assim:
 </xs:simpleType>
 ~~~
 
-Nota: Neste caso, o tipo "carType" pode ser usado por outros elementos porque não faz parte do elemento "carro.
+> Nota: Neste caso, o tipo "carType" pode ser usado por outros elementos porque não faz parte do elemento "carro.
 
 ## Restrições a uma Série de Valores
 
-- Para limitar o conteúdo de um elemento XML para definir uma série de números ou letras que podem ser usadas, nós usaríamos a restrição de padrão.
-- O exemplo abaixo define um elemento chamado "letra" com uma restrição. O único valor aceitável é UMA das letras MINÚSCULAS de a a z:
+Para limitar o conteúdo de um elemento XML para definir uma série de números ou letras que podem ser usadas, nós usaríamos a restrição de pattern.
+
+O exemplo abaixo define um elemento chamado "letra" com uma restrição. O único valor aceitável é UMA das letras MINÚSCULAS de a a z:
 
 ~~~xml
 <xs:element name="letter">
@@ -166,7 +167,7 @@ O próximo exemplo define um elemento chamado "senha" com um restrição. Deve h
 
 ## Restrições em Caracteres de Espaço em Branco
 
-- Para especificar como os caracteres de espaço em branco devem ser manipulados, usaremos a restrição whiteSpace.
+Para especificar como os caracteres de espaço em branco devem ser manipulados, usaremos a restrição whiteSpace.
 
 Este exemplo define um elemento chamado "endereço" com um restrição. A restrição whiteSpace é definida como "preservar", o que significa que o processador XML NÃO IRÁ remover quaisquer caracteres de espaço em branco:
 
@@ -180,7 +181,7 @@ Este exemplo define um elemento chamado "endereço" com um restrição. A restri
 </xs:element>
 ~~~
 
-Este exemplo também define um elemento chamado "endereço" com um restrição. A restrição whiteSpace é definida como "substituir", o que significa que o Processador XML SUBSTITUIRÁ todos os caracteres de espaço em branco (alimentações de linha, guias, espaços, etc, e retornos de carruagem) com espaços:
+Este exemplo também define um elemento chamado "address" com uma restrição. A restrição whiteSpace é definida como "replace", o que significa que o Processador XML SUBSTITUIRÁ todos os caracteres de espaço em branco (alimentações de linha, guias, espaços, etc, e retornos de carruagem) com espaços:
 
 ~~~xml
 <xs:element name="address">
@@ -192,7 +193,7 @@ Este exemplo também define um elemento chamado "endereço" com um restrição. 
 </xs:element>
 ~~~
 
-Este exemplo também define um elemento chamado "endereço" com um restrição. A restrição whiteSpace é definida como "colapso", o que significa que o processador XML IRÁ REMOVER todos os caracteres de espaço em branco (alimentações de linha, guias, espaços, devoluções de carruagem são substituídos por espaços, espaços principais e trailing são removidos e vários espaços são reduzidos a um único espaço):
+Este exemplo também define um elemento chamado "address" com um restrição. A restrição whiteSpace é definida como "collapse", o que significa que o processador XML IRÁ REMOVER todos os caracteres de espaço em branco (alimentações de linha, guias, espaços, devoluções de carruagem são substituídos por espaços, espaços principais e trailing são removidos e vários espaços são reduzidos a um único espaço):
 
 ~~~xml
 <xs:element name="address">
@@ -206,7 +207,7 @@ Este exemplo também define um elemento chamado "endereço" com um restrição. 
 
 ## Restrições de Comprimento
 
-- Para limitar o comprimento de um valor em um elemento, usaríamos as restrições length, maxLength e minLength.
+Para limitar o comprimento de um valor em um elemento, usaríamos as restrições length, maxLength e minLength.
 
 Este exemplo define um elemento chamado "senha" com uma restrição. O valor deve ser exatamente oito caracteres:
 
@@ -235,8 +236,8 @@ Este exemplo define outro elemento chamado "senha" com um restrição. O valor d
 
 Restrições para Datatypes
 
-- **enumeração**: Define uma lista de valores aceitáveis
-- **fracçãoDigits**: Especifica o número máximo de casas decimais permitidas. Deve ser igual ou maior que zero
+- **enumeration**: Define uma lista de valores aceitáveis
+- **fractionDigits**: Especifica o número máximo de casas decimais permitidas. Deve ser igual ou maior que zero
 - **length**: Especifica o número exato de caracteres ou itens de lista permitidos. Deve ser igual ou maior que zero
 - **maxExclusive**: Especifica os limites superiores para valores numéricos (o valor deve ser menor que este valor)
 - **maxInclusive**: Especifica os limites superiores para valores numéricos (o valor deve ser menor ou igual a este valor)
