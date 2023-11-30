@@ -14,11 +14,11 @@
 
 - Queremos transformar o documento XML meuArquivo.xml em um XHTML:
 
-meuArquivo.xml:
+**meuArquivo.xml**:
 
 ~~~xml
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="meuEstilo.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="meuEstilo.xsl"?> <!-- vinculando o xml ao meuEstilo.xsl -->
 <livros>
     <livro>
         <titulo>A Arte da Guerra</titulo>
@@ -31,24 +31,24 @@ meuArquivo.xml:
 </livros>
 ~~~
 
-meuEstilo.xsl: 
+**meuEstilo.xsl**: 
 
 ~~~xml
-<?xml version="1.0"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="/">
-        <html>
+<?xml version="1.0" encoding="UTF-8"?> <!-- o XSL sempre começa com essa linha, pois ele também é um documento xml -->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"> <!-- define que o documento é um xslt -->
+    <xsl:template match="/"> <!-- usado para definir um modelo (regra), o atributo match="/" define associa o modelo com a raiz do xml. '/' é um xPath -->
+        <html> <!-- o conteúdo dentro de <xsl:template> define algum HTML para escrever na saída. -->
             <body>
                 <h2>Lista de Livros</h2>
                 <table border="1">
-                    <tr bgcolor="#9acd32">
+                    <tr bgcolor="#2233aa">
                         <th>Título</th>
                         <th>Autor</th>
                     </tr>
                     <xsl:for-each select="livros/livro">
                         <tr>
                             <td>
-                                <xsl:value-of select="titulo"/>
+                                <xsl:value-of select="titulo"/> <!-- o elemento value-of extrai o valor de um nó selecionado pelo atributo select, que irá conter um XPath -->
                             </td>
                             <td>
                                 <xsl:value-of select="autor"/>
@@ -62,7 +62,10 @@ meuEstilo.xsl:
 </xsl:stylesheet>
 ~~~
 
+> Quando você tenta carregar um arquivo XSLT local a partir de um arquivo XML local no navegador, o navegador pode bloquear essa ação devido a restrições de segurança.
+
 Na pasta onde os arquivos meuArquivo.xml e meuEstilo.xsl estiverem é necessário rodar um servidor local. 
+
 Podemos fazer isso com Python, com o comando: 
 
 ~~~python

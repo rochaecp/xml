@@ -21,17 +21,18 @@
 # XSLT (eXtensible Stylesheet Language Transformations)
 
 - [Introdução](estudos/xslt/introducao.md)
-- [Transformações](estudos/xslt/transformar.md)
-- [Elemento xsl:template](estudos/xslt/template.md)
-- [value-of](estudos/xslt/)
-- [for-each](estudos/xslt/)
-- [sort](estudos/xslt/)
-- [if](estudos/xslt/)
-- [choose](estudos/xslt/)
-- [Apply](estudos/xslt/)
-- [XSLT no Cliente](estudos/xslt/)
-- [XSLT no Servidor](estudos/xslt/)
-- [XSLT - Editando um XML](estudos/xslt/)
+- [Exemplo introdutório - Transformações](estudos/xslt/transformar.md)
+- Elementos XSLT:
+    - [template](estudos/xslt/template.md)
+    - [value-of](estudos/xslt/value-of.md)
+    - [for-each](estudos/xslt/for-each.md)
+    - [sort](estudos/xslt/sort.md)
+    - [if](estudos/xslt/if.md)
+    - [choose](estudos/xslt/)
+    - [apply-templates](estudos/xslt/apply-templates.md)
+- [XSLT no Cliente - TODO](https://www.w3schools.com/xml/xsl_client.asp)
+- [XSLT no Servidor - TODO](https://www.w3schools.com/xml/xsl_server.asp)
+- [XSLT - Editando um XML - TODO](https://www.w3schools.com/xml/xsl_editxml.asp)
 
 # XSD
 
