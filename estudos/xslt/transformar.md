@@ -21,12 +21,24 @@
 <?xml-stylesheet type="text/xsl" href="meuEstilo.xsl"?> <!-- vinculando o xml ao meuEstilo.xsl -->
 <livros>
     <livro>
-        <titulo>A Arte da Guerra</titulo>
-        <autor>Sun Tzu</autor>
+        <titulo>O Livro dos Espíritos</titulo>
+        <autor>Allan Kardec</autor>
+        <ano>1857</ano>
     </livro>
     <livro>
-        <titulo>1984</titulo>
-        <autor>George Orwell</autor>
+        <titulo>Aprendendo Inteligência</titulo>
+        <autor> Pierluigi Piazzi</autor>
+        <ano>2007</ano>
+    </livro>     
+    <livro>
+        <titulo>Missionários da Luz</titulo>
+        <autor> Francisco Cândido Xavier</autor>
+        <ano>1945</ano>
+    </livro>
+    <livro>
+        <titulo>O Poder da Mente</titulo>
+        <autor>Suely Caldas Schubert</autor>
+        <ano>2020</ano>
     </livro>
 </livros>
 ~~~
@@ -41,9 +53,10 @@
             <body>
                 <h2>Lista de Livros</h2>
                 <table border="1">
-                    <tr bgcolor="#2233aa">
+                    <tr bgcolor="#113366">
                         <th>Título</th>
                         <th>Autor</th>
+                        <th>Ano</th>
                     </tr>
                     <xsl:for-each select="livros/livro">
                         <tr>
@@ -53,13 +66,16 @@
                             <td>
                                 <xsl:value-of select="autor"/>
                             </td>
+                            <td>
+                                <xsl:value-of select="ano"/>
+                            </td>                            
                         </tr>
                     </xsl:for-each>
                 </table>
             </body>
         </html>
     </xsl:template>
-</xsl:stylesheet>
+</xsl:stylesheet>            
 ~~~
 
 > Quando você tenta carregar um arquivo XSLT local a partir de um arquivo XML local no navegador, o navegador pode bloquear essa ação devido a restrições de segurança.
@@ -73,3 +89,44 @@ python -m http.server
 ~~~
 
 Após isso basta acessar a URL http://localhost:8000/meuArquivo.xml e visualizar o XML formatado pelo XSLT.
+
+# Exemplo mais completo
+
+Utilizando o mesmo xml **meuArquivo.xml** do exemplo anterior vamos criar um novo **meuEstilo.xsl**:
+
+~~~xml
+<?xml version="1.0" encoding="UTF-8"?> 
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"> 
+    <xsl:template match="/"> 
+        <html> 
+            <body>
+                <h2>Lista de Livros</h2>
+                <table border="1">
+                    <tr bgcolor="#113366">
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Ano</th>
+                    </tr>
+                    <xsl:for-each select="livros/livro[ano > 1900]"> <!-- utilizando o xpath para filtrar por ano -->
+                        <xsl:sort select="ano"/> <!-- ordena por ano -->
+                        <xsl:if test="titulo != 'O Poder da Mente'"> <!-- elemento if -->
+                            <tr>
+                                <xsl:choose>
+                                    <xsl:when test="titulo = 'Missionários da Luz'">
+                                        <td bgcolor="purple"><xsl:value-of select="titulo"/></td>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <td><xsl:value-of select="titulo"/></td>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <td><xsl:value-of select="autor"/></td>
+                                <td><xsl:value-of select="ano"/></td>                            
+                            </tr>
+                        </xsl:if>
+                    </xsl:for-each>
+                </table>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>  
+~~~

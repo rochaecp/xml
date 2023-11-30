@@ -17,10 +17,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <th>Artist</th>
             </tr>
             <xsl:for-each select="catalog/cd">
-            <tr>
-                <td><xsl:value-of select="title"/></td>
-                <td><xsl:value-of select="artist"/></td>
-            </tr>
+                <tr>
+                    <td><xsl:value-of select="title"/></td>
+                    <td><xsl:value-of select="artist"/></td>
+                </tr>
             </xsl:for-each>
         </table>
         </body>
@@ -51,10 +51,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <th>Artist</th>
             </tr>
             <xsl:for-each select="catalog/cd[artist='Bob Dylan']">
-            <tr>
-                <td><xsl:value-of select="title"/></td>
-                <td><xsl:value-of select="artist"/></td>
-            </tr>
+                <tr>
+                    <td><xsl:value-of select="title"/></td>
+                    <td><xsl:value-of select="artist"/></td>
+                </tr>
             </xsl:for-each>
         </table>
         </body>
@@ -65,8 +65,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 ~~~
 
 Os operadores de filtros são:
-    - ```=``` (igual)
-    - ```!=``` (não igual)
-    - ```<``` menos que
-    - ```>``` maior que
 
+- ```=``` (igual)
+- ```!=``` (não igual)
+- ```<``` menos que
+- ```>``` maior que
