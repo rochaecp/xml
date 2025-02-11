@@ -12,6 +12,7 @@ do curso sobre xml a seguir:
 ### O que é XML?  
 
 - Parte 1 - Conceito e importância  
+        <!-- *************************************************** continuar aqui  --> 
 - Parte 2 - Diferenças entre XML e HTML  
 - Parte 3 - Estrutura básica de um documento XML  
 
